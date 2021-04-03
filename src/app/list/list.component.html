@@ -1,0 +1,25 @@
+<!-- <li *ngFor="let book of books">{{ book.title }}</li> -->
+
+
+<div *ngIf="books?.length === 0">
+    <span>No books found</span>
+</div>
+
+<div *ngIf="books && books.length > 0">
+    <table style="border: 1px solid black;">
+        <thead style="background-color: #eee;">
+            <tr>
+                <th scope="col"><span>Title</span></th>
+                <th scope="col"><span>Author</span></th>
+                <th scope="col"><span>Copyrigth</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books" (click)="showBook(book)">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author.firstname }} {{ book.author.lastname }}</td>
+                <td>{{ book.copyright.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

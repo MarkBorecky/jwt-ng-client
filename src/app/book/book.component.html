@@ -1,0 +1,15 @@
+<dl class="row-md">
+    <dt><span>Title</span></dt>
+    <dd>
+        <span>{{ book.title }}</span>
+    </dd>
+    <dt><span>Author</span></dt>
+    <dd>
+        <span>{{ book.author.firstname }} {{ book.author.lastname }}</span>
+    </dd>
+    <dt><span>Copyrigth</span></dt>
+    <dd>
+        <span>{{ book.copyright.name }}</span>
+    </dd>
+    <button class="btn btn-primary" (click)="addBookToCart(book)">buy</button>
+</dl>

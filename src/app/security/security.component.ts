@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtClientService } from '../jwt-client.service';
+import { JwtClientService } from '../services/jwt-client.service';
 
 @Component({
   selector: 'app-security',
@@ -8,31 +8,13 @@ import { JwtClientService } from '../jwt-client.service';
 })
 export class SecurityComponent implements OnInit {
 
-  authRequest: any = {
-    userName: 'user2',
-    password: 'pass2'
-  };
-
   response: any;
 
   constructor(private service: JwtClientService) { }
 
-  ngOnInit(): void {
-    this.getAccessToken(this.authRequest);
+  ngOnInit(): void {}
 
+  public getAccessToken(authRequest): any {
+    return this.service.generateToken(authRequest);
   }
-
-  public getAccessToken(authRequest): void {
-    this.service.generateToken(authRequest)
-      .subscribe(data => {
-        console.log(`Token : ${data}`);
-        this.accessApi(data);
-      });
-  }
-
-  public accessApi(token): void {
-    this.service.welcome(token)
-      .subscribe(data => this.response = data);
-  }
-
 }

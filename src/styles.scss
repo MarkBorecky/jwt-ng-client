@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap-grid.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+$primary: rgb(111,0,255);
+$error: rgb(255, 100, 100);
+
+* {
+  margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+header {
+  background: $primary;
+  padding: 1em 0;
+
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  a.logo {
+    font-weigth: bold
+  }
+
+  nav {
+    float: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+
+      li a {
+        padding: 1em;
+
+        &:hover {
+          background: darken($primary, 10%)
+        }
+      }
+    }
+  }
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: $primary;
+    color: white;
+    text-align: center;
+    z-index: 102;
+}
+
+.error {
+  color: $error;
+}

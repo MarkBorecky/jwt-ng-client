@@ -1,0 +1,14 @@
+<p *ngIf="error" class="error">{{ error }}</p>
+<form [formGroup]="userForm" (ngSubmit)="login()">    
+    <label>
+        username: 
+        <input type="text" formControlName="username"/>
+    </label>
+    <br>
+    <label>
+        password
+        <input type="password" formControlName="password"/>
+    </label>
+    <br>
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>

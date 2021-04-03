@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json", 
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,6 +19,11 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "@auth0/angular-jwt": "^5.0.2",
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.1",
+    "jwt-decode": "^3.1.2",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

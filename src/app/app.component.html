@@ -1,8 +1,18 @@
-<div style="text-align: center;">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <app-security></app-security>
+<header>
+  <div class="container">
+    <a href="#" class="logo">Blog App</a>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="/">Home</a></li>
+        <li *ngIf="currentUser !== null"><a href="#" routerLink="/cart" >Cart <i class="bi bi-cart"></i></a></li>
+        <li><a href="#" routerLink="/list">Books</a></li>
+        <li *ngIf="currentUser === null"><a href="#" routerLink="/login">Login</a></li>
+        <li *ngIf="currentUser !== null"><a href="#" routerLink="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <router-outlet (activate)='loginEvent($event)' ></router-outlet>
 </div>
-
-<router-outlet></router-outlet>
+<footer>BLOG APP 2021</footer>
